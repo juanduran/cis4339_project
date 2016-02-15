@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   scope "/admin" do
     resources :users
   end
-  root to: "users#index"
+  authenticated :user do
+    root :to => 'users#index', as: :authenticated_root
+  end
+  root :to => 'welcome#index'
   resources :users
   resources :roles
   # The priority is based upon order of creation: first created -> highest priority.

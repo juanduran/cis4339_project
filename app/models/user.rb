@@ -12,4 +12,16 @@ class User < ActiveRecord::Base
     self.role = Role.find_by name: "Regular" if self.role.nil?
   end
 
+  def admin?
+    self.role.name == "Admin"
+  end
+
+  def employee?
+    self.role.name == "Employee"
+  end
+
+  def customer?
+    self.role.name == "Customer"
+  end
+
 end
