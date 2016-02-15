@@ -70,3 +70,344 @@ Processing by UsersController#index as HTML
   [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users"
   Rendered users/index.html.erb within layouts/application (1.5ms)
 Completed 200 OK in 62ms (Views: 60.6ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddDeviseToUsers (20160215172951)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "users" ADD "email" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.0ms)[0m  ALTER TABLE "users" ADD "encrypted_password" varchar DEFAULT '' NOT NULL
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "users" ADD "reset_password_token" varchar[0m
+  [1m[35m (0.0ms)[0m  ALTER TABLE "users" ADD "reset_password_sent_at" datetime
+  [1m[36m (0.0ms)[0m  [1mALTER TABLE "users" ADD "remember_created_at" datetime[0m
+  [1m[35m (0.0ms)[0m  ALTER TABLE "users" ADD "sign_in_count" integer DEFAULT 0 NOT NULL
+  [1m[36m (0.0ms)[0m  [1mALTER TABLE "users" ADD "current_sign_in_at" datetime[0m
+  [1m[35m (0.0ms)[0m  ALTER TABLE "users" ADD "last_sign_in_at" datetime
+  [1m[36m (0.0ms)[0m  [1mALTER TABLE "users" ADD "current_sign_in_ip" varchar[0m
+  [1m[35m (0.0ms)[0m  ALTER TABLE "users" ADD "last_sign_in_ip" varchar
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160215172951"]]
+  [1m[35m (3.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "roles" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Admin"], ["description", "Can read items"], ["created_at", "2016-02-15 17:55:49.678745"], ["updated_at", "2016-02-15 17:55:49.678745"]]
+  [1m[35m (4.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "roles" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Employee"], ["description", "Can read and create items. Can update and destroy own items"], ["created_at", "2016-02-15 17:55:49.686540"], ["updated_at", "2016-02-15 17:55:49.686540"]]
+  [1m[36m (4.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'santoyo@sts.com' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "role_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Santoyo"], ["email", "santoyo@sts.com"], ["encrypted_password", "$2a$10$N4xH0EO/Hmfcw/YEH06qyOgDb8dAA5isOP3.tVnF4bx67u.Tr11b2"], ["role_id", 1], ["created_at", "2016-02-15 17:55:49.774158"], ["updated_at", "2016-02-15 17:55:49.774158"]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'employee@sts.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "role_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Employee"], ["email", "employee@sts.com"], ["encrypted_password", "$2a$10$VZ6u8jjYCW4430pYQ0lbsez.ELOEdBiJAqjfoF1V13IsdCglJQ3Qq"], ["role_id", 2], ["created_at", "2016-02-15 17:55:49.840222"], ["updated_at", "2016-02-15 17:55:49.840222"]]
+  [1m[36m (3.9ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-15 11:57:01 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 14ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-02-15 11:57:02 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 250ms (Views: 241.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-02-15 11:57:16 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/devise-3.5.2/app/views/devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 67ms (Views: 66.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-02-15 11:57:35 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ap7bxkYbjaZOXrraC2ufAYx31b2VkGNtmWX3YAzkWlyZH4+M5uKLepcMGXtPQYSWFnifxHYBnGBu8oUmHC4J7Q==", "user"=>{"email"=>"santoyo@sts.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'santoyo@sts.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/devise-3.5.2/app/views/devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 149ms (Views: 59.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-02-15 11:57:47 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 62ms (Views: 61.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-02-15 11:57:56 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GrnIz0jbDHY3No1sJXGv68pRjgHrR/mXfPC1awTaLSXpOJyF6CIKqu5kLs1hW7R8UF7EeAjWBpqLZ8ctFBB+lA==", "user"=>{"email"=>"santoyo@sts.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "santoyo@sts.com"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2016-02-15 17:57:56.570374"], ["current_sign_in_at", "2016-02-15 17:57:56.570374"], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2016-02-15 17:57:56.571375"], ["id", 1]]
+  [1m[35m (4.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 79ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-15 11:57:56 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRole Load (0.0ms)[0m  SELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 86ms (Views: 84.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-15 11:59:08 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRole Load (0.0ms)[0m  SELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 57ms (Views: 55.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/roles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-15 11:59:08 -0600
+
+
+Started GET "/assets/scaffolds.self-686b7c3a1eaa5d26b0908f4b6d1fe85688ef87ae2e61644b762a31366a040aa5.css?body=1" for 127.0.0.1 at 2016-02-15 11:59:08 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-15 11:59:08 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-02-15 11:59:08 -0600
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:08 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:08 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:08 -0600
+
+
+Started GET "/assets/roles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:08 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:08 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:08 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-15 11:59:09 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRole Load (0.0ms)[0m  SELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 52ms (Views: 50.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/roles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-15 11:59:09 -0600
+
+
+Started GET "/assets/scaffolds.self-686b7c3a1eaa5d26b0908f4b6d1fe85688ef87ae2e61644b762a31366a040aa5.css?body=1" for 127.0.0.1 at 2016-02-15 11:59:09 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-15 11:59:09 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-02-15 11:59:09 -0600
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:09 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:09 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:09 -0600
+
+
+Started GET "/assets/roles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:09 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:09 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:09 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-15 11:59:10 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRole Load (0.0ms)[0m  SELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 77ms (Views: 75.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/roles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-15 11:59:10 -0600
+
+
+Started GET "/assets/scaffolds.self-686b7c3a1eaa5d26b0908f4b6d1fe85688ef87ae2e61644b762a31366a040aa5.css?body=1" for 127.0.0.1 at 2016-02-15 11:59:10 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-15 11:59:10 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-02-15 11:59:10 -0600
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:10 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:10 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:10 -0600
+
+
+Started GET "/assets/roles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:10 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:10 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:10 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-15 11:59:11 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRole Load (1.0ms)[0m  SELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 57ms (Views: 53.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/roles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-15 11:59:11 -0600
+
+
+Started GET "/assets/scaffolds.self-686b7c3a1eaa5d26b0908f4b6d1fe85688ef87ae2e61644b762a31366a040aa5.css?body=1" for 127.0.0.1 at 2016-02-15 11:59:11 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-15 11:59:11 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-02-15 11:59:11 -0600
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:11 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:11 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:11 -0600
+
+
+Started GET "/assets/roles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:11 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:11 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:11 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-15 11:59:37 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRole Load (1.0ms)[0m  SELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 101ms (Views: 98.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/roles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-15 11:59:37 -0600
+
+
+Started GET "/assets/scaffolds.self-686b7c3a1eaa5d26b0908f4b6d1fe85688ef87ae2e61644b762a31366a040aa5.css?body=1" for 127.0.0.1 at 2016-02-15 11:59:37 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-15 11:59:37 -0600
+
+
+Started GET "/assets/application.self-efb347e7a71700e01d36450287edb0653caef4d679bdded3aab8aaca5f455b5f.css?body=1" for 127.0.0.1 at 2016-02-15 11:59:37 -0600
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:37 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:37 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:37 -0600
+
+
+Started GET "/assets/roles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:37 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:37 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-15 11:59:37 -0600
