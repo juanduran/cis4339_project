@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  resources :services
   devise_for :users
   scope "/admin" do
     resources :users
   end
-  authenticated :user do
-    root :to => 'users#index', as: :authenticated_root
-  end
+  # authenticated :user do
+  #   root :to => 'services#index', as: :authenticated_root
+  # end
   root :to => 'welcome#index'
   resources :users
   resources :roles

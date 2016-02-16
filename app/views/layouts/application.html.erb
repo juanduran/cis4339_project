@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Second Rate Coffee</title>
+  <title>Santoyo Tree Services</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -11,8 +11,11 @@
 <div class="header">
 
   <h1>Santoyo Tree Services</h1>
+  <%= link_to "Home", root_path %>
   <%= link_to "Employees", users_path %>
-  <%= link_to "Roles", roles_path %><br>
+  <%= link_to "Roles", roles_path %>
+  <%= link_to "Services", services_path %><br>
+
 
   <% if user_signed_in? %>
       Signed in as <%= current_user.email %>. Not you?
