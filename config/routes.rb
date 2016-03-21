@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'about/index'
+
+  get 'welcome/index'
+
+  get 'contact/index'
+
   resources :services
   devise_for :users
   scope "/admin" do
