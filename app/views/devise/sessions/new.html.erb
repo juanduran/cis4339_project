@@ -1,4 +1,19 @@
-<h2>Log in</h2>
+<div class="container">
+
+  <!-- Page Heading/Breadcrumbs -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Log In
+        <small>Available</small>
+      </h1>
+      <ol class="breadcrumb">
+        <%= link_to "Welcome", welcome_index_path %>
+        </li>
+        <li class="active"> \ Log In</li>
+      </ol>
+    </div>
+  </div>
+
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -24,3 +39,5 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+    </div>
