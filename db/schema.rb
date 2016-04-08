@@ -11,7 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405203154) do
+ActiveRecord::Schema.define(version: 20160408030736) do
+
+  create_table "businesses", force: :cascade do |t|
+    t.string   "business_name"
+    t.string   "phone_number"
+    t.string   "email"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string   "customer_name"
+    t.string   "phone_number"
+    t.string   "email"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.integer  "business_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string   "employee_name"
+    t.string   "employee_email"
+    t.string   "role_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "equipment", force: :cascade do |t|
+    t.string   "equipment_name"
+    t.string   "equipment_location"
+    t.integer  "employee_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
 
   create_table "invoices", force: :cascade do |t|
     t.integer  "customer_id"
@@ -63,5 +104,13 @@ ActiveRecord::Schema.define(version: 20160405203154) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["role_id"], name: "index_users_on_role_id"
+
+  create_table "vehicles", force: :cascade do |t|
+    t.string   "vehicle_name"
+    t.string   "vechile_location"
+    t.integer  "employee_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
 end
