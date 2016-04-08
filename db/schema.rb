@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160215232335) do
+ActiveRecord::Schema.define(version: 20160405203154) do
+
+  create_table "invoices", force: :cascade do |t|
+    t.integer  "customer_id"
+    t.date     "date"
+    t.decimal  "invoice_total"
+    t.string   "terms"
+    t.integer  "project_id"
+    t.integer  "job_id"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
