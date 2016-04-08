@@ -4,8 +4,9 @@ class CreateServices < ActiveRecord::Migration
       t.string :name
       t.string :description
       t.float :price
-      t.belongs_to :user, index: true, foreign_key: true
-
+      t.integer  :line_item_id
+      t.integer  :job_id
+      t.integer  :user_id
       t.timestamps null: false
     end
   end
