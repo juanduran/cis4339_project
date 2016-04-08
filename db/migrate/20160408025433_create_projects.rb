@@ -3,7 +3,6 @@ class CreateProjects < ActiveRecord::Migration
     create_table :projects do |t|
       t.string :project_name
       t.string :description
-      t.integer :job_id
 
       t.timestamps null: false
     end
