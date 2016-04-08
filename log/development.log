@@ -53800,3 +53800,247 @@ Migrating to CreateBusinesses (20160408030736)
             FROM sqlite_temp_master
             WHERE name='index_users_on_role_id' AND type='index'
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateDatabase (20160408144339)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "businesses"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "businesses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "business_name" varchar(255), "phone_number" varchar(255), "email" varchar(255), "street_address" varchar(255), "city" varchar(255), "state" varchar(255), "zip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "crews"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "crews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "crew_name" varchar(255), "employee_id" integer(4), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "customers"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "customers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "customer_name" varchar(255), "phone_number" varchar(255), "email" varchar(255), "street_address" varchar(255), "city" varchar(255), "state" varchar(255), "zip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "businesses_id" integer(4) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "fk_customers_businesses1_idx" ON "customers" ("businesses_id")
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "employees"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "employees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "employee_name" varchar(255), "employee_email" varchar(255), "role_id" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "roles_id" integer(4) NOT NULL, "crews_id" integer(4) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "fk_employees_crews1_idx" ON "employees" ("crews_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='fk_employees_crews1_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='fk_employees_crews1_idx' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "fk_employees_roles1_idx" ON "employees" ("roles_id")[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "equipment"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "equipment" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "equipment_name" varchar(255), "equipment_location" varchar(255), "employee_id" integer(4), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "employees_id" integer(4) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "fk_equipment_employees1_idx" ON "equipment" ("employees_id")
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "estimates"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "estimates" ("id" integer(4) NOT NULL, "potential_customer" varchar(255), "terms" varchar(255), "description" varchar(255), "quantity" integer(4), "total" decimal(10), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "customers_id" integer(4) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "fk_estimates_customers1_idx" ON "estimates" ("customers_id")[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "invoices"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "invoices" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "invoice_total" decimal(10), "terms" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "customers_id" integer(4) NOT NULL, "users_id" integer(4) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "fk_invoices_customers1_idx" ON "invoices" ("customers_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='fk_invoices_customers1_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='fk_invoices_customers1_idx' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "fk_invoices_users1_idx" ON "invoices" ("users_id")
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "jobs"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "crew_id" integer(4), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "crews_id" integer(4) NOT NULL, "projects_id" integer(4) NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "fk_jobs_crews1_idx" ON "jobs" ("crews_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='fk_jobs_crews1_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='fk_jobs_crews1_idx' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "fk_jobs_projects1_idx" ON "jobs" ("projects_id")[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "line_items"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "line_items" ("id" integer(4) NOT NULL, "quantity" integer(4), "service_id" integer(4), "job_id" integer(4), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "invoices_id" integer(4) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "fk_line_items_invoices1_idx" ON "line_items" ("invoices_id")
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "projects"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_name" varchar(255), "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "roles"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "users_id" integer(4) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "fk_roles_users1_idx" ON "roles" ("users_id")[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "services"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "services" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "price" float(24), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "line_items_id" integer(4) NOT NULL, "jobs_id" integer(4) NOT NULL, "users_id" integer(4) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "fk_services_jobs1_idx" ON "services" ("jobs_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='fk_services_jobs1_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='fk_services_jobs1_idx' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "fk_services_line_items1_idx" ON "services" ("line_items_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='fk_services_line_items1_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='fk_services_line_items1_idx' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='fk_services_jobs1_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='fk_services_jobs1_idx' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "fk_services_users1_idx" ON "services" ("users_id")[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "users"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer(4) DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255)) [0m
+  [1m[35m (0.1ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "vehicles"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "vehicles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "vehicle_name" varchar(255), "vechile_location" varchar(255), "employee_id" integer(4), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "crews_id" integer(4) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "fk_vehicles_crews1_idx" ON "vehicles" ("crews_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160408144339"]]
+  [1m[36m (4.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='fk_customers_businesses1_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='fk_customers_businesses1_idx' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='fk_employees_roles1_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='fk_employees_roles1_idx' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='fk_employees_crews1_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='fk_employees_crews1_idx' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='fk_equipment_employees1_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='fk_equipment_employees1_idx' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='fk_estimates_customers1_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='fk_estimates_customers1_idx' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='fk_invoices_users1_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='fk_invoices_users1_idx' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='fk_invoices_customers1_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='fk_invoices_customers1_idx' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='fk_jobs_projects1_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='fk_jobs_projects1_idx' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='fk_jobs_crews1_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='fk_jobs_crews1_idx' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='fk_line_items_invoices1_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='fk_line_items_invoices1_idx' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='fk_roles_users1_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='fk_roles_users1_idx' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='fk_services_users1_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='fk_services_users1_idx' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='fk_services_line_items1_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='fk_services_line_items1_idx' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='fk_services_jobs1_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='fk_services_jobs1_idx' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='fk_vehicles_crews1_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='fk_vehicles_crews1_idx' AND type='index'
+[0m
