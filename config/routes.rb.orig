@@ -4,11 +4,6 @@ Rails.application.routes.draw do
   resources :line_items
   resources :projects
   resources :crews
-  resources :businesses
-  resources :customers
-  resources :vehicles
-  resources :employees
-  resources :equipment
   resources :invoices
   get 'about/index'
 
