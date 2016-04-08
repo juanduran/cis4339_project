@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :estimates
+  resources :jobs
+  resources :line_items
+  resources :projects
+  resources :crews
   resources :invoices
   get 'about/index'
 

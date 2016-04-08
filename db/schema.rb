@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405203154) do
+ActiveRecord::Schema.define(version: 20160408030721) do
+
+  create_table "crews", force: :cascade do |t|
+    t.string   "crew_name"
+    t.integer  "employee_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "estimates", force: :cascade do |t|
+    t.string   "potential_customer"
+    t.string   "terms"
+    t.string   "description"
+    t.integer  "quantity"
+    t.decimal  "total"
+    t.integer  "customer_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
 
   create_table "invoices", force: :cascade do |t|
     t.integer  "customer_id"
@@ -23,6 +41,28 @@ ActiveRecord::Schema.define(version: 20160405203154) do
     t.integer  "user_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.integer  "crew_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer  "quantity"
+    t.integer  "service_id"
+    t.integer  "job_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "project_name"
+    t.string   "description"
+    t.integer  "job_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "roles", force: :cascade do |t|
