@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :vehicle_chekouts
+  resources :vehicle_checkouts
   resources :equipment_checkouts
   resources :estimates
   resources :jobs

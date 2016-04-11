@@ -2,13 +2,13 @@ require 'test_helper'
 
 class VehicleChekoutsControllerTest < ActionController::TestCase
   setup do
-    @vehicle_chekout = vehicle_chekouts(:one)
+    vehicle_checkout = vehicle_chekouts(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:vehicle_chekouts)
+    assert_not_nil assigns(:VehicleCheckouts)
   end
 
   test "should get new" do
@@ -16,32 +16,32 @@ class VehicleChekoutsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create vehicle_chekout" do
-    assert_difference('VehicleChekout.count') do
-      post :create, vehicle_chekout: { checkout_date: @vehicle_chekout.checkout_date, crew_id: @vehicle_chekout.crew_id, return_date: @vehicle_chekout.return_date, vehicle_id: @vehicle_chekout.vehicle_id }
+  test "should create vehicle_checkout" do
+    assert_difference('VehicleCheckout.count') do
+      post :create, vehicle_checkout: {checkout_date: vehicle_checkout.checkout_date, crew_id: vehicle_checkout.crew_id, return_date: vehicle_checkout.return_date, vehicle_id: vehicle_checkout.vehicle_id }
     end
 
-    assert_redirected_to vehicle_chekout_path(assigns(:vehicle_chekout))
+    assert_redirected_to vehicle_chekout_path(assigns(:vehicle_checkout))
   end
 
-  test "should show vehicle_chekout" do
-    get :show, id: @vehicle_chekout
+  test "should show vehicle_checkout" do
+    get :show, id: vehicle_checkout
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @vehicle_chekout
+    get :edit, id: vehicle_checkout
     assert_response :success
   end
 
-  test "should update vehicle_chekout" do
-    patch :update, id: @vehicle_chekout, vehicle_chekout: { checkout_date: @vehicle_chekout.checkout_date, crew_id: @vehicle_chekout.crew_id, return_date: @vehicle_chekout.return_date, vehicle_id: @vehicle_chekout.vehicle_id }
-    assert_redirected_to vehicle_chekout_path(assigns(:vehicle_chekout))
+  test "should update vehicle_checkout" do
+    patch :update, id: vehicle_checkout, vehicle_checkout: {checkout_date: vehicle_checkout.checkout_date, crew_id: vehicle_checkout.crew_id, return_date: vehicle_checkout.return_date, vehicle_id: vehicle_checkout.vehicle_id }
+    assert_redirected_to vehicle_chekout_path(assigns(:vehicle_checkout))
   end
 
-  test "should destroy vehicle_chekout" do
-    assert_difference('VehicleChekout.count', -1) do
-      delete :destroy, id: @vehicle_chekout
+  test "should destroy vehicle_checkout" do
+    assert_difference('VehicleCheckout.count', -1) do
+      delete :destroy, id: vehicle_checkout
     end
 
     assert_redirected_to vehicle_chekouts_path
