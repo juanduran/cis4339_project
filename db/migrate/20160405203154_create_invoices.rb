@@ -5,8 +5,8 @@ class CreateInvoices < ActiveRecord::Migration
       t.date :date
       t.decimal :invoice_total
       t.string :terms
-      t.integer :user_id
-
+      t.integer :project_id
+      t.integer :job_id
       t.timestamps null: false
     end
   end

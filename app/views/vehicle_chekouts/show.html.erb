@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Checkout date:</strong>
+  <%= @vehicle_chekout.checkout_date %>
+</p>
+
+<p>
+  <strong>Return date:</strong>
+  <%= @vehicle_chekout.return_date %>
+</p>
+
+<p>
+  <strong>Crew:</strong>
+  <%= @vehicle_chekout.crew_id %>
+</p>
+
+<p>
+  <strong>Vehicle:</strong>
+  <%= @vehicle_chekout.vehicle_id %>
+</p>
+
+<%= link_to 'Edit', edit_vehicle_chekout_path(@vehicle_chekout) %> |
+<%= link_to 'Back', vehicle_chekouts_path %>

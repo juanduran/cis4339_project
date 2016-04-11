@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Checkout date:</strong>
+  <%= @equipment_checkout.checkout_date %>
+</p>
+
+<p>
+  <strong>Return date:</strong>
+  <%= @equipment_checkout.return_date %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @equipment_checkout.employee_id %>
+</p>
+
+<p>
+  <strong>Equipment:</strong>
+  <%= @equipment_checkout.equipment_id %>
+</p>
+
+<%= link_to 'Edit', edit_equipment_checkout_path(@equipment_checkout) %> |
+<%= link_to 'Back', equipment_checkouts_path %>

@@ -7,7 +7,6 @@ class CreateEstimates < ActiveRecord::Migration
       t.integer :quantity
       t.decimal :total
       t.integer :customer_id
-
       t.timestamps null: false
     end
   end

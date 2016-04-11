@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160408030736) do
+ActiveRecord::Schema.define(version: 20160411193803) do
 
   create_table "businesses", force: :cascade do |t|
     t.string   "business_name"
@@ -27,9 +27,8 @@ ActiveRecord::Schema.define(version: 20160408030736) do
 
   create_table "crews", force: :cascade do |t|
     t.string   "crew_name"
-    t.integer  "employee_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "customers", force: :cascade do |t|
@@ -57,9 +56,17 @@ ActiveRecord::Schema.define(version: 20160408030736) do
   create_table "equipment", force: :cascade do |t|
     t.string   "equipment_name"
     t.string   "equipment_location"
-    t.integer  "employee_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "equipment_checkouts", force: :cascade do |t|
+    t.date     "checkout_date"
+    t.date     "return_date"
+    t.integer  "employee_id"
+    t.integer  "equipment_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "estimates", force: :cascade do |t|
@@ -78,7 +85,8 @@ ActiveRecord::Schema.define(version: 20160408030736) do
     t.date     "date"
     t.decimal  "invoice_total"
     t.string   "terms"
-    t.integer  "user_id"
+    t.integer  "project_id"
+    t.integer  "job_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -118,11 +126,8 @@ ActiveRecord::Schema.define(version: 20160408030736) do
     t.string   "name"
     t.string   "description"
     t.float    "price"
-    t.integer  "line_item_id"
-    t.integer  "job_id"
-    t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -142,10 +147,18 @@ ActiveRecord::Schema.define(version: 20160408030736) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
+  create_table "vehicle_chekouts", force: :cascade do |t|
+    t.date     "checkout_date"
+    t.date     "return_date"
+    t.integer  "crew_id"
+    t.integer  "vehicle_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "vehicles", force: :cascade do |t|
     t.string   "vehicle_name"
     t.string   "vechile_location"
-    t.integer  "crew_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
