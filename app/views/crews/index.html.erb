@@ -1,8 +1,12 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Crews</h1>
-
-<table>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class ="panel-heading">
+        <h3 class="panel-title">Customers</h3>
+      </div>
+      <div class = "panel-body">
+       <table class="table table-hover table-bordered">
   <thead>
     <tr>
       <th>Crew name</th>
@@ -12,10 +16,9 @@
   </thead>
 
   <tbody>
-    <% @crews.each do |crew| %>
-      <tr>
+     <% @crews.each do |crew| %>
+           <tr>
         <td><%= crew.crew_name %></td>
-        <td><%= crew.employee_id %></td>
         <td><%= link_to 'Show', crew %></td>
         <td><%= link_to 'Edit', edit_crew_path(crew) %></td>
         <td><%= link_to 'Destroy', crew, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -24,6 +27,24 @@
   </tbody>
 </table>
 
-<br>
+      </div>
+      <div class="panel-footer">
+        <%= link_to 'New Crew', new_crew_path, class: "btn btn-primary" %>
+      </div>
+       </div>
+        </div>
+         </div>
 
-<%= link_to 'New Crew', new_crew_path %>
+
+
+
+
+
+
+
+
+
+
+
+
+
