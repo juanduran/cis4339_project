@@ -1,3 +1,5 @@
 class Customer < ActiveRecord::Base
-  has_many :businesses
+  belongs_to :business
+  has_many :estimates
+  has_many :invoices
 end

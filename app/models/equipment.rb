@@ -1,5 +1,5 @@
 class Equipment < ActiveRecord::Base
 
-  belongs_to :equipment_checkout
+  has_many :equipment_checkouts
 
 end

@@ -1,5 +1,5 @@
 class Vehicle < ActiveRecord::Base
 
-  belongs_to :vehicle_checkout
+  has_many :vehicle_checkouts
 
 end
