@@ -1,7 +1,8 @@
 class Employee < ActiveRecord::Base
 
-  has_many :roles
-  has_many :crews
+  belongs_to :role
+  belongs_to :crew
+  has_many :equipment_checkouts
 
 
 

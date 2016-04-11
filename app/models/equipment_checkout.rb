@@ -1,7 +1,7 @@
 class EquipmentCheckout < ActiveRecord::Base
 
-  has_many :equipments
-  has_many :employees
+  belongs_to :equipment
+  belongs_to :employee
 
 
 

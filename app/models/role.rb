@@ -1,6 +1,6 @@
 class Role < ActiveRecord::Base
 
-  belongs_to :employee
+  has_many :employees
 
 
   def admin?
