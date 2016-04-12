@@ -25,7 +25,7 @@ class ServicesController < ApplicationController
   # POST /services
   # POST /services.json
   def create
-    @service.user_id = current_user.id
+    #@service.user_id = current_user.id
 
     respond_to do |format|
       if @service.save
