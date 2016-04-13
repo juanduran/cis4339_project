@@ -15,7 +15,7 @@
     <%= render 'customer_fields', f: customer %>
     <% end %>
     <div class = "links">
-     
+     <%= link_to_add_association 'Add Customers', f, :customers %>
     </div>
   </div>
 
