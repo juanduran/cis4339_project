@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   get 'contact/index'
 
   resources :services
+
+
+
   devise_for :users
   scope "/admin" do
     resources :users
