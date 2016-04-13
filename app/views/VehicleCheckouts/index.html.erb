@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Vehicle Chekouts</h1>
+<h1>Listing Vehicle Checkouts</h1>
 
 <table>
   <thead>
@@ -14,15 +14,15 @@
   </thead>
 
   <tbody>
-    <% vehicle_checkouts.each do |vehicle_chekout| %>
+    <% vehicle_checkouts.each do |vehicle_checkout| %>
       <tr>
-        <td><%= vehicle_chekout.checkout_date %></td>
-        <td><%= vehicle_chekout.return_date %></td>
-        <td><%= vehicle_chekout.crew_id %></td>
-        <td><%= vehicle_chekout.vehicle_id %></td>
-        <td><%= link_to 'Show', vehicle_chekout %></td>
-        <td><%= link_to 'Edit', edit_vehicle_chekout_path(vehicle_chekout) %></td>
-        <td><%= link_to 'Destroy', vehicle_chekout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= vehicle_checkout.checkout_date %></td>
+        <td><%= vehicle_checkout.return_date %></td>
+        <td><%= vehicle_checkout.crew_id %></td>
+        <td><%= vehicle_checkout.vehicle_id %></td>
+        <td><%= link_to 'Show', vehicle_checkout %></td>
+        <td><%= link_to 'Edit', edit_vehicle_checkout_path(vehicle_checkout) %></td>
+        <td><%= link_to 'Destroy', vehicle_checkout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Vehicle chekout', new_vehicle_chekout_path %>
+<%= link_to 'New Vehicle checkout', new_vehicle_checkout_path %>

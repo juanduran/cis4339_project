@@ -32,8 +32,6 @@
     <% if current_user.try(:admin?) || current_user.try(:employee?) || current_user.try(:customer?) %>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
       <ul class="nav navbar-nav">
-        <li> <%= link_to "Welcome", welcome_index_path %></li>
-        <li> <%= link_to "About", about_index_path %></li>
         <% if can? :read, Invoice %>
             <li><%= link_to("Invoices", invoices_path)%></li>
         <% end %>
@@ -41,7 +39,44 @@
             <li><%= link_to("Services", services_path)%></li>
         <% end %>
         <% if can? :read, Customer %>
-            <li><%= link_to "Customers", customers_path %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clients<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <%= link_to "Customers", customers_path %>
+                </li>
+                <li>
+                  <%= link_to "Businesses", businesses_path %>
+                </li>
+            </ul>
+        <% end %>
+        <% if can? :read, Equipment %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Inventory <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <%= link_to "Equipment", equipment_index_path %>
+                </li>
+                <li>
+                  <%= link_to "Vehicles", vehicles_path %>
+                </li>
+
+              </ul>
+            </li>
+        <% end %>
+        <% if can? :read, EquipmentCheckout %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Check Out<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <%= link_to "Equipment Checkout", equipment_checkouts_path %>
+                </li>
+                <li>
+                  <%= link_to "Vehicle Checkout", vehicle_checkouts_path %>
+                </li>
+
+              </ul>
+            </li>
         <% end %>
         <% if can? :read, Crew %>
           <li><%= link_to "Crew", crews_path %></li>
@@ -49,7 +84,6 @@
         <% if can? :read, Estimate %>
           <li><%= link_to "Estimate", estimates_path %></li>
         <% end %>
-        <li><%= link_to "Contact", contact_index_path %></li>
         <% if can? :read, Role %>
          <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
@@ -60,11 +94,12 @@
             <li>
               <%= link_to "Employees", users_path %>
             </li>
-        <% end %>
+
           </ul>
         </li>
+        <% end %>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
+      <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
@@ -83,7 +118,7 @@
             </ul>
             </li>
           </ul>
-          <form class="navbar-form navbar-left" role="search">
+          <form class="navbar-form navbar-right" role="search">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Search">
             </div>
