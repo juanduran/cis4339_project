@@ -5,6 +5,7 @@ gem 'devise'
 gem 'cancancan', '1.10'
 gem 'nested_form_fields'
 gem  'ransack'
+gem 'cocoon'
 #Bootstrap Gems
 gem 'bootstrap-sass'
 

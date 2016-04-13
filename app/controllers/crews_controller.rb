@@ -71,6 +71,6 @@ class CrewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def crew_params
-      params.require(:crew).permit(:crew_name, :employee_id)
+      params.require(:crew).permit(:crew_name, :employee_id, vehicle_checkouts_attributes: [:id, :_destroy])
     end
 end

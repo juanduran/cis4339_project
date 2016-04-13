@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   belongs_to :role
 
   has_many :users
-
+  accepts_nested_attributes_for :users, allow_destroy: true, reject_if: :all_blank
   validates_presence_of :name
   before_save :assign_role
 

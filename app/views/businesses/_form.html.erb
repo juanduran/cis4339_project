@@ -10,6 +10,14 @@
     <%= f.input :state %>
     <%= f.input :zip %>
   </div>
+  <div id = "customers">
+    <%= f.simple_fields_for :customers do |customer|%>
+    <%= render 'customer_fields', f: customer %>
+    <% end %>
+    <div class = "links">
+     
+    </div>
+  </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
