@@ -17,3 +17,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.navbar-inverse {
+  background-color: green;
+  border-color: green;
+}
+
+.navbar-nav > li > a {
+  color: #C5C4C4;
+}
+
