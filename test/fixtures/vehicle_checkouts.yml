@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  checkout_date: 2016-04-11
-  return_date: 2016-04-11
+  checkout_date: 2016-04-14
+  return_date: 2016-04-14
   crew_id: 1
   vehicle_id: 1
 
 two:
-  checkout_date: 2016-04-11
-  return_date: 2016-04-11
+  checkout_date: 2016-04-14
+  return_date: 2016-04-14
   crew_id: 1
   vehicle_id: 1
