@@ -13,8 +13,8 @@
       <th>Return date</th>
       <th>Employee</th>
       <th>Equipment</th>
-       <th>Availability</th>
-      <th colspan="4"></th>
+
+      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -25,17 +25,14 @@
         <td><%= equipment_checkout.return_date %></td>
         <td><%= equipment_checkout.employee_id %></td>
         <td><%= equipment_checkout.equipment_id %></td>
-        <% if equipment_checkout.return_date.nil? %>
-            <td> Reserved </td>
-         <% else %>
-            <td> Available </td>
-            <% end %>
 
-        <td><%= link_to 'Show', equipment_checkout %></td>
         <% if user_signed_in? %>
-        <% if equipment_checkout.employee.id == current_user.employee.id %>
-            <td><%= link_to 'Edit', edit_equipment_checkout_path(equipment_checkout) %></td>
-        <% end %>
+            <% if equipment_checkout.employee.id == current_user.employee_id %>
+                <td><%= link_to 'Return', edit_equipment_checkout_path(equipment_checkout) %></td>
+        <% else %>
+                <td></td>
+            <% end %>
+        <td><%= link_to 'Show', equipment_checkout %></td>
         <td><%= link_to 'Destroy', equipment_checkout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
