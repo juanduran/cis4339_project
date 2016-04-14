@@ -31,9 +31,9 @@
         <td><%= business.city %></td>
         <td><%= business.state %></td>
         <td><%= business.zip %></td>
-        <td><%= link_to 'Show', business %></td>
-        <td><%= link_to 'Edit', edit_business_path(business) %></td>
-        <td><%= link_to 'Destroy', business, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', business,class: "btn btn-primary" %></td>
+        <td><%= link_to 'Edit', edit_business_path(business),class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', business,class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
