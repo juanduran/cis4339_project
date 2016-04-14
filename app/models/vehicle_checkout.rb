@@ -1,6 +1,5 @@
 class VehicleCheckout < ActiveRecord::Base
 
-  belongs_to :crew
   belongs_to :vehicle
-
+  belongs_to :crew
 end
