@@ -30,12 +30,16 @@
          <% else %>
             <td> Available </td>
             <% end %>
-        <td><%= %></td>
+
         <td><%= link_to 'Show', equipment_checkout %></td>
-        <td><%= link_to 'Edit', edit_equipment_checkout_path(equipment_checkout) %></td>
+        <% if user_signed_in? %>
+        <% if equipment_checkout.employee.id == current_user.employee.id %>
+            <td><%= link_to 'Edit', edit_equipment_checkout_path(equipment_checkout) %></td>
+        <% end %>
         <td><%= link_to 'Destroy', equipment_checkout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+        <% end %>
   </tbody>
 </table>
 

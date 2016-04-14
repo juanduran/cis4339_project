@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160414180516) do
+ActiveRecord::Schema.define(version: 20160414215049) do
 
   create_table "businesses", force: :cascade do |t|
     t.string   "business_name"
@@ -150,6 +150,7 @@ ActiveRecord::Schema.define(version: 20160414180516) do
     t.string   "current_sign_in_ip",     limit: 255
     t.string   "last_sign_in_ip",        limit: 255
     t.integer  "role_id"
+    t.integer  "employee_id"
   end
 
   create_table "vehicle_checkouts", force: :cascade do |t|

@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   validates_presence_of :name
   before_save :assign_role
 
+  belongs_to :employee
+
   def assign_role
     self.role = Role.find_by name: "Regular" if self.role.nil?
   end
