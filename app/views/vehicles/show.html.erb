@@ -1,5 +1,14 @@
-<p id="notice"><%= notice %></p>
 
+
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class ="panel-heading">
+        <h3 class="panel-title">Vehicles</h3>
+      </div>
+      <div class = "panel-body">
+ <p>
 <p>
   <strong>Vehicle name:</strong>
   <%= @vehicle.vehicle_name %>
@@ -9,11 +18,14 @@
   <strong>Vechile location:</strong>
   <%= @vehicle.vechile_location %>
 </p>
+      </div>
+      <div class="panel-footer">
+        <div class="btn-group>">
+        <%= link_to 'Edit', edit_vehicle_path(@vehicle), class: "btn btn-danger"  %> 
+        <%= link_to 'Back', vehicles_path, class: "btn btn-warning "%>
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>
 
-<p>
-  <strong>Employee:</strong>
-  <%= @vehicle.employee_id %>
-</p>
-
-<%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
-<%= link_to 'Back', vehicles_path %>
