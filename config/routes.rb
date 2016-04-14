@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :estimate_line_items
   resources :vehicle_checkouts
   resources :vehicle_checkouts
   resources :vehicle_checkouts
