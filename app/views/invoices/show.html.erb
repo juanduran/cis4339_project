@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class ="panel-heading">
+        <h3 class="panel-title">Invoices</h3>
+      </div>
+      <div class = "panel-body">
+        <p>
+  <strong>Customer:</strong>
+  <%= @invoice.customer_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @invoice.date %>
+</p>
+
+<p>
+  <strong>Invoice total:</strong>
+  <%= @invoice.invoice_total %>
+</p>
+
+<p>
+  <strong>Terms:</strong>
+  <%= @invoice.terms %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @invoice.project_id %>
+</p>
+
+<p>
+  <strong>Job:</strong>
+  <%= @invoice.job_id %>
+</p>
+
+      <div class = "print">
+      <%= link_to "CLICK HERE TO PRINT", '#', onclick: "printpage()" %>
+    </div>
+      </div>
+      <div class="panel-footer">
+        <div class="btn-group>">
+          
+        <%= link_to 'Edit', edit_invoice_path(@invoice), class: "btn btn-danger"  %> 
+        <%= link_to 'Back', invoices_path, class: "btn btn-warning "%>
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>
+
+

@@ -1,0 +1,16 @@
+<%= simple_form_for(@estimate) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :potential_customer %>
+    <%= f.input :terms %>
+    <%= f.input :description %>
+    <%= f.input :quantity %>
+    <%= f.input :total %>
+    <%= f.input :customer_id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
