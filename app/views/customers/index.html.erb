@@ -3,10 +3,9 @@
   <div class="col-md-8 col-md-offset-2">
     <div class="panel panel-default">
       <div class ="panel-heading">
-        <h3 class="panel-title">Customers</h3>
+        <h3 class="panel-title">CUSTOMERS</h3>
       </div>
       <div class = "panel-body">
-       <h1>Customers</h1>
         <%= search_form_for @search do |f| %>
         </div>
         <div class = "field">
@@ -45,9 +44,9 @@
         <td><%= customer.state %></td>
         <td><%= customer.zip %></td>
         <td><%= customer.business_id %></td>
-        <td><%= link_to 'Show', customer %></td>
-        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', customer,class: "btn btn-primary" %></td>
+        <td><%= link_to 'Edit', edit_customer_path(customer),class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', customer,class: "btn btn-danger",  method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
