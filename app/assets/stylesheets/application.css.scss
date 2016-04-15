@@ -17,12 +17,22 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* Ehsan's custom CSS to remove annoying google elements */
+.goog-te-gadget-icon {display:none;}
+.goog-te-gadget-simple a {text-decoration: none !important;}
+.goog-te-banner-frame.skiptranslate {display: none !important;}
+body { top: 0px !important; }
+
 .navbar-inverse {
-  background-color: #032a00;
-  border-color: green;
+  background-color: #000000;
+  border-color: #20aa00;
+  border-width: 5px;
+
 }
 
-.navbar-nav > li > a {
-  color: #C5C4C4;
-}
+
+
+
+
+
 
