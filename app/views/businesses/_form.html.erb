@@ -1,0 +1,25 @@
+<%= simple_form_for(@business) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :business_name %>
+    <%= f.input :phone_number %>
+    <%= f.input :email %>
+    <%= f.input :street_address %>
+    <%= f.input :city %>
+    <%= f.input :state %>
+    <%= f.input :zip %>
+  </div>
+  <div id = "customers">
+    <%= f.simple_fields_for :customers do |customer|%>
+    <%= render 'customer_fields', f: customer %>
+    <% end %>
+    <div class = "links">
+     <%= link_to_add_association 'Add Customers', f, :customers %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

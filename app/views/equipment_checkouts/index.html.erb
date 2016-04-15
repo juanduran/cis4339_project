@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class ="panel-heading">
+        <h3 class="panel-title">Equipment checkout</h3>
+      </div>
+      <div class = "panel-body">
+       <table class="table table-hover table-bordered">
+  <thead>
+     <tr>
+      <th>Checkout date</th>
+      <th>Return date</th>
+      <th>Employee</th>
+      <th>Equipment</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @equipment_checkouts.each do |equipment_checkout| %>
+      <tr>
+        <td><%= equipment_checkout.checkout_date %></td>
+        <td><%= equipment_checkout.return_date %></td>
+        <td><%= equipment_checkout.employee_id %></td>
+        <td><%= equipment_checkout.equipment_id %></td>
+
+        <% if user_signed_in? %>
+            <% if equipment_checkout.employee.id == current_user.employee_id %>
+                <td><%= link_to 'Return', edit_equipment_checkout_path(equipment_checkout) %></td>
+        <% else %>
+                <td></td>
+            <% end %>
+        <td><%= link_to 'Show', equipment_checkout %></td>
+        <td><%= link_to 'Destroy', equipment_checkout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+        <% end %>
+  </tbody>
+</table>
+
+      </div>
+      <div class="panel-footer">
+        <%= link_to 'Make A Reservation', new_equipment_checkout_path, class: "btn btn-primary" %>
+
+      </div>
+       </div>
+        </div>
+         </div>
+
+
+
+
