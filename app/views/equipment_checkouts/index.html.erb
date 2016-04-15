@@ -28,12 +28,12 @@
 
         <% if user_signed_in? %>
             <% if equipment_checkout.employee.id == current_user.employee_id %>
-                <td><%= link_to 'Return', edit_equipment_checkout_path(equipment_checkout) %></td>
+                <td><%= link_to 'Return', edit_equipment_checkout_path(equipment_checkout), class: "btn btn-primary" %></td>
         <% else %>
                 <td></td>
             <% end %>
-        <td><%= link_to 'Show', equipment_checkout %></td>
-        <td><%= link_to 'Destroy', equipment_checkout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', equipment_checkout, class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', equipment_checkout, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
         <% end %>

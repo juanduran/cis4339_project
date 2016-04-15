@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3541323958">
+  <component name="DataSourceManagerImpl" format="xml" hash="718082580">
     <data-source source="LOCAL" name="Rails CapstoneProject: development" uuid="d7ea83fb-2d3c-4c64-ae60-2f4b1a27c4af">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\mahmoode\school\final_project\cis4375project\db\development.sqlite3</jdbc-url>
-      <libraries />
+      <jdbc-url>jdbc:sqlite:C:\Users\Matthew\Desktop\cis4375project\db\development.sqlite3</jdbc-url>
     </data-source>
     <data-source source="LOCAL" name="Rails CapstoneProject: test" uuid="8a069954-8d8d-4ee8-bc60-23a274efb3fc">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\mahmoode\school\final_project\cis4375project\db\test.sqlite3</jdbc-url>
-      <libraries />
+      <jdbc-url>jdbc:sqlite:C:\Users\Matthew\Desktop\cis4375project\db\test.sqlite3</jdbc-url>
     </data-source>
   </component>
 </project>

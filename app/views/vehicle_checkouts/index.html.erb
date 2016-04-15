@@ -1,15 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Vehicle Checkouts</h1>
-
-<table>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class ="panel-heading">
+        <h3 class="panel-title">Vehicle checkout</h3>
+      </div>
+      <div class = "panel-body">
+        <table class="table table-hover table-bordered">
   <thead>
     <tr>
       <th>Checkout date</th>
       <th>Return date</th>
       <th>Crew</th>
       <th>Vehicle</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -20,9 +25,17 @@
         <td><%= vehicle_checkout.return_date %></td>
         <td><%= vehicle_checkout.crew_id %></td>
         <td><%= vehicle_checkout.vehicle_id %></td>
-        <td><%= link_to 'Show', vehicle_checkout %></td>
-        <td><%= link_to 'Edit', edit_vehicle_checkout_path(vehicle_checkout) %></td>
-        <td><%= link_to 'Destroy', vehicle_checkout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <% if user_signed_in? %>
+            <% if vehicle_checkout.crew.id == current_user.employee.crew_id %>
+                <td><%= link_to 'Return', edit_vehicle_checkout_path(vehicle_checkout), class: "btn btn-primary" %></td>
+            <% else %>
+                <td></td>
+            <% end %>
+        <% end %>
+
+        <td><%= link_to 'Show', vehicle_checkout, class: "btn btn-warning"%></td>
+        <td><%= link_to 'Destroy', vehicle_checkout, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +43,9 @@
 
 <br>
 
-<%= link_to 'New Vehicle checkout', new_vehicle_checkout_path %>
+<%= link_to 'Make A Reservation', new_vehicle_checkout_path, class: "btn btn-primary" %>
+
+      </div>
+    </div>
+  </div>
+</div>
