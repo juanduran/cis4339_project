@@ -1,16 +1,16 @@
 <%= simple_form_for(@job) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :crew_id %>
-    <%= f.input :project_id %>
-  </div>
+   <%= f.association :crew, label_method: :crew_name, value_method: :id, :input_html => {id: 'menus',:style=> 'width: 300px'} %>
+    <%= f.association :project, label_method: :project_name, value_method: :id, :input_html => {id: 'menus',:style=> 'width: 300px'} %>
+
   <div id = "LineItems">
     <%= f.simple_fields_for :line_items do |line_item|%>
-    <%= render 'LineItem_fields', f: line_item %>
+   
     <% end %>
     <div class = "links">
-<%=link_to_add_association 'Add LineItems', f, :line_items%>
+
+<%=link_to_add_association 'Add LineItems', f, :line_items, class: "btn btn-primary"%>
     </div>
   </div>
 
