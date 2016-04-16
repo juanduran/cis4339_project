@@ -39,7 +39,7 @@
         <td><%= estimate.description %></td>
         <td><%= estimate.quantity %></td>
         <td><%= estimate.total %></td>
-        <td><%= estimate.customer_id %></td>
+        <td><%= estimate.customer.customer_name %></td>
         <td><%= link_to 'Show', estimate, class: "btn btn-primary" %></td>
         <td><%= link_to 'Edit', edit_estimate_path(estimate),class: "btn btn-warning" %></td>
         <td><%= link_to 'Destroy', estimate, class: "btn btn-danger",method: :delete, data: { confirm: 'Are you sure?' } %></td>

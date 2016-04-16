@@ -23,8 +23,8 @@
       <tr>
         <td><%= vehicle_checkout.checkout_date %></td>
         <td><%= vehicle_checkout.return_date %></td>
-        <td><%= vehicle_checkout.crew_id %></td>
-        <td><%= vehicle_checkout.vehicle_id %></td>
+        <td><%= vehicle_checkout.crew.crew_name %></td>
+        <td><%= vehicle_checkout.vehicle.vehicle_name %></td>
 
         <% if user_signed_in? %>
             <% if vehicle_checkout.crew.id == current_user.employee.crew_id %>
