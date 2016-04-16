@@ -9,7 +9,7 @@
     <%= f.input :city %>
     <%= f.input :state %>
     <%= f.input :zip %>
-    <%= f.input :business_id %>
+    <%= f.association :business, :include_blank => true, :label_method => :business_name%>
   </div>
 
   <div class="form-actions">
