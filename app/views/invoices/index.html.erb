@@ -46,12 +46,12 @@
         <tbody>
      <% @invoices.each do |invoice| %>
       <tr>
-        <td><%= invoice.customer_id %></td>
+        <td><%= invoice.customer.customer_name %></td>
         <td><%= invoice.date %></td>
         <td><%= invoice.invoice_total %></td>
         <td><%= invoice.terms %></td>
-        <td><%= invoice.project_id %></td>
-        <td><%= invoice.job_id %></td>
+        <td><%= invoice.project.project_name %></td>
+        <td><%= invoice.job.job_name %></td>
         <td><%= link_to 'Show',invoice,class: "btn btn-primary" %></td>
         <td><%= link_to 'Edit', edit_invoice_path(invoice),class: "btn btn-warning" %></td>
         <td><%= link_to 'Destroy', invoice,class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
