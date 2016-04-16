@@ -7,7 +7,7 @@
     <%= f.input :description %>
     <%= f.input :quantity %>
     <%= f.input :total %>
-    <%= f.input :customer_id %>
+    <%= f.association :customer, :include_blank => true, :label_method => :customer_name%>
   </div>
 
   <div class="form-actions">
