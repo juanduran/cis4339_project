@@ -4,7 +4,7 @@
   <div class="form-inputs">
     <%= f.input :employee_name %>
     <%= f.input :employee_phone %>
-    <%= f.input :crew_id %>
+    <%= f.association :crew, :include_blank => true, :label_method => :crew_name%>
   </div>
 
   <div class="form-actions">
