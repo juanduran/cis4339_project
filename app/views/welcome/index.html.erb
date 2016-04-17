@@ -5,24 +5,39 @@
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
+
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <div class="first-slide" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+      <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Front of Location');"></div>
       <div class="carousel-caption">
-        <h2>Caption 1</h2>
+        <h2>Front of Location</h2>
       </div>
     </div>
     <div class="item">
-      <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+      <div class="fill" style="background-image:url('http://i.imgur.com/wDiBQcz.jpg');"></div>
       <div class="carousel-caption">
         <h2>Caption 2</h2>
       </div>
     </div>
     <div class="item">
       <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+      <div class="carousel-caption">
+        <h2>Caption 3</h2>
+      </div>
+    </div>
+    <div class="item">
+      <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+      <div class="carousel-caption">
+        <h2>Caption 3</h2>
+      </div>
+    </div>
+    <div class="item">
+      <div class="fill" style="background-image:url('http://i.imgur.com/wDiBQcz.jpg');"></div>
       <div class="carousel-caption">
         <h2>Caption 3</h2>
       </div>
@@ -47,11 +62,19 @@
       <h1 class="page-header">
         Welcome to Santoyo Tree Service
       </h1>
-      <div class="weatherModule">
-        <p class="currentConditions"></p>
-        <p class="currentWind"></p>
-        <div class="currentIcon"></div>
+    </div>
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4><i class="fa fa-fw fa-check"></i> Weather Information</h4>
+        </div>
+        <div class="panel-body">
+          <p>
+            <iframe id="forecast_embed" type="text/html" frameborder="0" height="245" width="100%" src="http://forecast.io/embed/#lat=29.7217&lon=-95.3455&name=Houston"> </iframe></p>
+          <!--<a href="#" class="btn btn-default">Learn More</a>-->
+        </div>
       </div>
     </div>
-      </div>
- </div>
+
+  </div>
+</div>

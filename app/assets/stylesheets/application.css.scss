@@ -21,7 +21,12 @@
 .goog-te-gadget-icon {display:none;}
 .goog-te-gadget-simple a {text-decoration: none !important;}
 .goog-te-banner-frame.skiptranslate {display: none !important;}
-body { top: 0px !important; }
+
+/*Change background here*/
+body { top: 0px !important;
+  background: url(http://i.imgur.com/m0R4erg.jpg) repeat;
+
+}
 
 .navbar-inverse {
   background-color: #000000;
@@ -29,7 +34,6 @@ body { top: 0px !important; }
   border-width: 5px;
 
 }
-
 
 
 
