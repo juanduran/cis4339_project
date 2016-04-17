@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class ="panel-heading">
+        <h3 class="panel-title">Invoices</h3>
+      </div>
+      <div class = "panel-body">
+        <p>
+  <strong>Customer:</strong>
+          <% if @invoice.customer.present? %>
+  <%= @invoice.customer.customer_name %>
+</p>
+
+              <% end %>
+
+<p>
+  <strong>Date:</strong>
+  <%= @invoice.date %>
+</p>
+
+<p>
+  <strong>Invoice total:</strong>
+  <%= @invoice.invoice_total %>
+</p>
+
+<p>
+  <strong>Terms:</strong>
+  <%= @invoice.terms %>
+</p>
+
+          <% if @invoice.project.present? %>
+<p>
+  <strong>Project:</strong>
+  <%= @invoice.project.project_name%>
+</p>
+         <% end %>
+
+  <% if @invoice.crew.present? %>
+ <p>
+ <strong>Crew:</strong>
+ <%= @invoice.crew.crew_name%>
+ </p>
+ <% end %>
+
+
+          <div class = "print">
+      <%= link_to "CLICK HERE TO PRINT", '#', onclick: "printpage()" %>
+    </div>
+      </div>
+
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>
+
+

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  equipment_name: MyString
+  equipment_location: MyString
+  employee_id: 1
+
+two:
+  equipment_name: MyString
+  equipment_location: MyString
+  employee_id: 1

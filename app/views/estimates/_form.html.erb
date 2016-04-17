@@ -1,0 +1,16 @@
+<%= simple_form_for(@estimate) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="col-xs-3">
+    <%= f.input :potential_customer %>
+    <%= f.input :terms %>
+    <%= f.input :description %>
+    <%= f.input :quantity %>
+    <%= f.input :total %>
+    <%= f.association :customer, :include_blank => true, :label_method => :customer_name%>
+
+    <%= f.button :submit %>
+  </div>
+    </div>
+<% end %>

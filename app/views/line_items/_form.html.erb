@@ -1,0 +1,13 @@
+<%= simple_form_for(@line_item) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="col-xs-3">
+    <%= f.input :quantity %>
+    <%= f.input :service_id %>
+    <%= f.input :job_id %>
+
+    <%= f.button :submit %>
+  </div>
+    </div>
+<% end %>

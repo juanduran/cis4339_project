@@ -1,0 +1,19 @@
+<%= simple_form_for(@customer) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="col-xs-3">
+    <%= f.input :customer_name %>
+    <%= f.input :phone_number %>
+    <%= f.input :email %>
+    <%= f.input :street_address %>
+    <%= f.input :city %>
+    <%= f.input :state %>
+    <%= f.input :zip %>
+    <%= f.association :business, :include_blank => true, :label_method => :business_name%>
+
+
+    <%= f.button :submit %>
+  </div>
+    </div>
+<% end %>
