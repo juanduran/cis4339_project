@@ -3,12 +3,13 @@
 
     <div class="form-inputs">
       <div class="col-xs-3">
-      <%= f.input :return_date %>
+        <%= f.input :return_date, :disabled => true %>
+        <%= f.input :return_date, :as => :hidden, input_html: {value: Date.today} %>
 
 
 
 
-      <%= f.button :submit %>
+      <%= f.button :submit, :label => "Return Equipment" %>
         </div>
     </div>
 <% end %>
