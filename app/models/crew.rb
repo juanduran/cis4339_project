@@ -5,4 +5,5 @@ class Crew < ActiveRecord::Base
   has_many :vehicle_checkouts
 accepts_nested_attributes_for :vehicle_checkouts, allow_destroy: true, reject_if: :all_blank
 accepts_nested_attributes_for :employees, allow_destroy: true, reject_if: :all_blank
+validates :crew_name, presence: true
 end

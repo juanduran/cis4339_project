@@ -6,5 +6,5 @@ class Employee < ActiveRecord::Base
   has_many :users
 
   accepts_nested_attributes_for :equipment_checkouts, allow_destroy: true, reject_if: :all_blank
-
+  validates :employee_name, :employee_email, presence: true
 end	
