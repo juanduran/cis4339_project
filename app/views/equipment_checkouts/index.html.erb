@@ -23,8 +23,16 @@
       <tr>
         <td><%= equipment_checkout.checkout_date %></td>
         <td><%= equipment_checkout.return_date %></td>
+        <% if equipment_checkout.employee.present? %>
         <td><%= equipment_checkout.employee.employee_name %></td>
+            <% else %>
+            <td></td>
+            <% end %>
+        <% if equipment_checkout.equipment.present? %>
         <td><%= equipment_checkout.equipment.equipment_name %></td>
+            <% else %>
+            <td></td>
+            <% end %>
 
         <% if user_signed_in? %>
             <% if equipment_checkout.employee.id == current_user.employee_id %>

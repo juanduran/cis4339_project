@@ -45,12 +45,24 @@
         <tbody>
      <% @invoices.each do |invoice| %>
       <tr>
+        <% if invoice.customer.present? %>
         <td><%= invoice.customer.customer_name %></td>
+            <% else %>
+            <td></td>
+            <% end %>
         <td><%= invoice.date %></td>
         <td><%= invoice.invoice_total %></td>
         <td><%= invoice.terms %></td>
+        <% if invoice.project.present? %>
         <td><%= invoice.project.project_name %></td>
+        <% else %>
+        <td></td>
+        <% end %>
+        <% if invoice.crew.present? %>
         <td><%= invoice.crew.crew_name %></td>
+        <% else %>
+        <td></td>
+        <% end %>
         <td><%= link_to 'Show',invoice,class: "btn btn-primary" %></td>
         <td><%= link_to 'Edit', edit_invoice_path(invoice),class: "btn btn-warning" %></td>
         <td><%= link_to 'Destroy', invoice,class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
