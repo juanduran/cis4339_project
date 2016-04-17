@@ -2,12 +2,13 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <div class="col-xs-3">
     <%= f.input :employee_name %>
     <%= f.input :employee_phone %>
     <%= f.association :crew, :include_blank => true, :label_method => :crew_name%>
-  </div>
 
-  <div class="form-actions">
+
     <%= f.button :submit %>
   </div>
+    </div>
 <% end %>
