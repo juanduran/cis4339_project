@@ -1,0 +1,87 @@
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Page Heading/Breadcrumbs -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Equipment_checkouts
+        <small>Available</small>
+      </h1>
+      <ol class="breadcrumb">
+        <%= link_to "Welcome", welcome_index_path %>
+        </li>
+        <li class="active"> \ Equipment_checkouts</li>
+      </ol>
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered table-hover">
+        <thead>
+        <tr>
+      <th>Checkout date</th>
+      <th>Return date</th>
+      <th>Employee</th>
+      <th>Equipment</th>
+
+      <th colspan="3"></th>
+    </tr>
+        </thead>
+        <tbody>
+ <% @equipment_checkouts.each do |equipment_checkout| %>
+      <tr>
+        <td><%= equipment_checkout.checkout_date %></td>
+        <td><%= equipment_checkout.return_date %></td>
+        <% if equipment_checkout.employee.present? %>
+        <td><%= equipment_checkout.employee.employee_name %></td>
+            <% else %>
+            <td></td>
+            <% end %>
+        <% if equipment_checkout.equipment.present? %>
+        <td><%= equipment_checkout.equipment.equipment_name %></td>
+            <% else %>
+            <td></td>
+            <% end %>
+
+        <% if user_signed_in? %>
+            <% if equipment_checkout.employee.id == current_user.employee_id %>
+                <td><%= link_to 'Return', edit_equipment_checkout_path(equipment_checkout), class: "btn btn-primary" %></td>
+        <% else %>
+                <td></td>
+            <% end %>
+        <td><%= link_to 'Show', equipment_checkout, class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', equipment_checkout, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+<br>
+   <div class="panel-footer">
+        <%= link_to 'Make A Reservation', new_equipment_checkout_path, class: "btn btn-info" %>
+      </div>
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
