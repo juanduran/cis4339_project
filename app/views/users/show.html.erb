@@ -1,9 +1,11 @@
-
+<% if @user.employee.present? %>
 
 <p>
-  <strong>Role:</strong>
+  <strong>Employee:</strong>
   <%= @user.employee.employee_name %>
 </p>
+
+    <% end %>
 
 <p>
   <strong>Role:</strong>

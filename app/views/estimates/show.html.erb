@@ -33,10 +33,13 @@
   <%= @estimate.total %>
 </p>
 
+        <% if @estimate.customer.present? %>
 <p>
   <strong>Customer:</strong>
   <%= @estimate.customer.customer_name %>
 </p>
+
+            <% end %>
 
       <div class = "print">
       <%= link_to "CLICK HERE TO PRINT", '#', onclick: "printpage()" %>

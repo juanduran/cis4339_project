@@ -42,8 +42,7 @@
   <%= @customer.zip %>
 </p>
 
-        <% if @customer.business.business_name.nil? %>
-            <% else %>
+        <% if @customer.business.present? %>
 <p>
   <strong>Business:</strong>
   <%= @customer.business.business_name %>

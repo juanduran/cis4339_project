@@ -19,15 +19,22 @@
   <%= @equipment_checkout.return_date %>
 </p>
 
+        <% if @equipment_checkout.employee.present? %>
 <p>
   <strong>Employee:</strong>
-  <%= @equipment_checkout.employee_id %>
+  <%= @equipment_checkout.employee.employee_name %>
 </p>
 
+            <% end %>
+
+        <% if @equipment_checkout.equipment.present? %>
 <p>
   <strong>Equipment:</strong>
-  <%= @equipment_checkout.equipment_id %>
+  <%= @equipment_checkout.equipment.equipment_name %>
 </p>
+
+            <% end %>
+
       </div>
       <div class="panel-footer">
         <div class="btn-group>">
