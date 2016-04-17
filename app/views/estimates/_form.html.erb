@@ -3,11 +3,11 @@
 
   <div class="form-inputs">
     <div class="col-xs-3">
-    <%= f.input :potential_customer %>
+    <%= f.label :potential_customer %>
+      <%= f.input :potential_customer, :label => false %>
     <%= f.input :terms %>
     <%= f.input :description %>
     <%= f.input :quantity %>
-    <%= f.input :total %>
     <%= f.association :customer, :include_blank => true, :label_method => :customer_name%>
 
       <%= f.simple_fields_for :estimate_line_items do |line_item|%>

@@ -28,6 +28,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/equipment_checkouts/new.html.erb" afterPath="$PROJECT_DIR$/app/views/equipment_checkouts/new.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/equipment_checkouts/show.html.erb" afterPath="$PROJECT_DIR$/app/views/equipment_checkouts/show.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/estimate_line_items/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/estimate_line_items/_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/estimates/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/estimates/_form.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/invoices/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/invoices/_form.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/invoices/_line_item_fields.erb" afterPath="$PROJECT_DIR$/app/views/invoices/_line_item_fields.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/invoices/index.html.erb" afterPath="$PROJECT_DIR$/app/views/invoices/index.html.erb" />
@@ -103,21 +104,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="invoice.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/invoice.rb">
+      <file leaf-file-name="estimate.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/estimate.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="64" />
+            <state relative-caret-position="102">
+              <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="estimate.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/estimate.rb">
+      <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/equipment_checkouts/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/equipment/_form.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -146,8 +157,8 @@
       <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/estimates/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+            <state relative-caret-position="153">
+              <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -178,16 +189,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
               <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/vehicle_checkouts/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="16" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -255,10 +256,10 @@
         <option value="$PROJECT_DIR$/app/views/line_items/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/vehicle_checkouts/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/vehicle_checkouts/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/estimate.rb" />
         <option value="$PROJECT_DIR$/app/views/estimates/_line_item_fields.erb" />
         <option value="$PROJECT_DIR$/app/controllers/estimates_controller.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20160417200112_chancepotentialtoboolean.rb" />
+        <option value="$PROJECT_DIR$/app/models/estimate.rb" />
         <option value="$PROJECT_DIR$/app/views/estimates/_form.html.erb" />
       </list>
     </option>
@@ -1035,12 +1036,12 @@
       <workItem from="1460828601021" duration="924000" />
       <workItem from="1460830756623" duration="3577000" />
       <workItem from="1460836296735" duration="4167000" />
-      <workItem from="1460908777767" duration="14057000" />
+      <workItem from="1460908777767" duration="14864000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72476000" />
+    <option name="totallyTimeSpent" value="73283000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1110,22 +1111,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/services/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/employees/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1456,14 +1441,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/estimate.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/invoices/_line_item_fields.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1512,10 +1489,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/estimate.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/equipment_checkouts/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/equipment/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/estimates/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+        <state relative-caret-position="153">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
           <folding />
         </state>
       </provider>
