@@ -8,7 +8,7 @@
       <div class = "panel-body">
         <p>
   <strong>Customer:</strong>
-  <%= @invoice.customer_id %>
+  <%= @invoice.customer.customer_name %>
 </p>
 
 <p>
@@ -28,13 +28,9 @@
 
 <p>
   <strong>Project:</strong>
-  <%= @invoice.project_id %>
+  <%= @invoice.project.project_name%>
 </p>
 
-<p>
-  <strong>Job:</strong>
-  <%= @invoice.job_id %>
-</p>
 
       <div class = "print">
       <%= link_to "CLICK HERE TO PRINT", '#', onclick: "printpage()" %>
