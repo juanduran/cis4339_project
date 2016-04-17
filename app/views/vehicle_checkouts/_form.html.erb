@@ -1,0 +1,14 @@
+<%= simple_form_for(@vehicle_checkout) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :checkout_date %>
+    <%= f.input :return_date %>
+    <%= f.association :crew, :include_blank => true, :label_method => :crew_name%>
+    <%= f.association :vehicle, :include_blank => true, :label_method => :vehicle_name%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

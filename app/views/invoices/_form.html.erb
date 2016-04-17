@@ -1,0 +1,16 @@
+<%= simple_form_for(@invoice) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :customer, :include_blank => true, :label_method => :customer_name%>
+    <%= f.input :date %>
+    <%= f.input :invoice_total %>
+    <%= f.input :terms %>
+    <%= f.association :project, :include_blank => true, :label_method => :project_name%>
+    <%= f.association :crew, :include_blank => true, :label_method => :crew_name%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

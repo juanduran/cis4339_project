@@ -1,0 +1,11 @@
+<%= simple_form_for(@crew) do |f| %>
+  <%= f.error_notification %>
+    <div class="form-inputs">
+      <div class="col-xs-3">
+        <%= f.input :crew_name %>
+
+    <%= f.button :submit %>
+      </div>
+      </div>
+
+<% end %>

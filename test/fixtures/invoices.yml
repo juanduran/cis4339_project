@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer_id: 1
+  date: 2016-04-05
+  invoice_total: 9.99
+  terms: MyString
+  project_id: 1
+  job_id: 1
+  user_id: 1
+
+two:
+  customer_id: 1
+  date: 2016-04-05
+  invoice_total: 9.99
+  terms: MyString
+  project_id: 1
+  job_id: 1
+  user_id: 1

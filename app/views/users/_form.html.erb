@@ -1,0 +1,37 @@
+<%= simple_form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <div class="field">
+        <%= f.association :employee, :include_blank => true, :label_method => :employee_name%>
+      </div>
+
+    </div>
+
+  <div class="field">
+    <%= f.association :role, :include_blank => true, :label_method => :name%>
+  </div>
+
+    <div class="field">
+      <%= f.input :email %>
+    </div>
+
+
+    <div class="field">
+      <%= f.input :password, placeholder: "Leave blank if unchanged" %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+<% end %>
