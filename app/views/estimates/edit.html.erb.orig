@@ -3,20 +3,23 @@
   <!-- Page Heading/Breadcrumbs -->
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">New Customer
-
+      <h1 class="page-header">New Estimate
       </h1>
       <ol class="breadcrumb">
-        <%= link_to "Customer", customers_path %>
+        <%= link_to "Estimate", estimates_path %>
         </li>
-        <li class="active"> \ New Customer</li>
+        <li class="active"> \ Estimate</li>
       </ol>
     </div>
   </div>
 
 
+
 <div class="row">
   <%= render 'form' %>
 </div>
-  <%= link_to 'Back', customers_path %>
+
+<%= link_to 'Show', @estimate %> |
+<%= link_to 'Back', estimates_path %>
+
   </div>
