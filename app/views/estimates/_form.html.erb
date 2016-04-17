@@ -1,0 +1,25 @@
+<%= simple_form_for(@estimate) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="col-xs-3">
+    <%= f.label :potential_customer %>
+      <%= f.input :potential_customer, :label => false %>
+    <%= f.input :terms %>
+    <%= f.input :description %>
+    <%= f.input :quantity %>
+    <%= f.association :customer, :include_blank => true, :label_method => :customer_name%>
+
+      <%= f.simple_fields_for :estimate_line_items do |line_item|%>
+          <%= render 'estimate_line_item_fields', :f => line_item%>
+      <% end %>
+      <div id='links'>
+        <br>
+        <%= link_to_add_association 'add item', f, :estimate_line_items%>
+      </div>
+
+      <%= f.button :submit %>
+
+  </div>
+    </div>
+<% end %>

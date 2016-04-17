@@ -1,0 +1,24 @@
+<div class="container">
+
+  <!-- Page Heading/Breadcrumbs -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Edit Equipment
+
+      </h1>
+      <ol class="breadcrumb">
+        <%= link_to "Equipment", equipment_index_path %>
+        </li>
+        <li class="active"> \ Edit Equipment</li>
+      </ol>
+    </div>
+  </div>
+
+<div class="row">
+  <%= render 'form' %>
+</div>
+
+<%= link_to 'Show', @equipment %> |
+<%= link_to 'Back', equipment_index_path %>
+
+  </div>

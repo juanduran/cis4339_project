@@ -1,0 +1,25 @@
+
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class ="panel-heading">
+        <h3 class="panel-title">Customers</h3>
+      </div>
+      <div class = "panel-body">
+<p>
+  <strong>Crew name:</strong>
+  <%= @crew.crew_name %>
+</p>
+      </div>
+      <div class="panel-footer">
+        <div class="btn-group>">
+        <%= link_to 'Edit', edit_crew_path(@crew), class: "btn btn-danger"  %> 
+        <%= link_to 'Back', crews_path, class: "btn btn-warning "%>
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>
+
+

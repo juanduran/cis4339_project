@@ -1,0 +1,21 @@
+<%= simple_form_for(@business) do |f| %>
+  <%= f.error_notification %>
+<form>
+
+
+  <div class="form-inputs">
+    <div class="col-xs-3">
+    <%= f.input :business_name %>
+    <%= f.input :phone_number %>
+    <%= f.input :email %>
+    <%= f.input :street_address %>
+    <%= f.input :city %>
+    <%= f.input :state %>
+    <%= f.input :zip %>
+
+    <%= f.button :submit %>
+  </div>
+    </div>
+
+  </form>
+<% end %>

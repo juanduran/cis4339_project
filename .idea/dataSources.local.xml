@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails CapstoneProject: development" uuid="d7ea83fb-2d3c-4c64-ae60-2f4b1a27c4af">
+      <secret-storage>memory</secret-storage>
+    </data-source>
+    <data-source name="Rails CapstoneProject: test" uuid="8a069954-8d8d-4ee8-bc60-23a274efb3fc">
+      <secret-storage>memory</secret-storage>
+    </data-source>
+  </component>
+</project>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  potential_customer: MyString
+  terms: MyString
+  description: MyString
+  quantity: 1
+  total: 9.99
+  customer_id: 1
+
+two:
+  potential_customer: MyString
+  terms: MyString
+  description: MyString
+  quantity: 1
+  total: 9.99
+  customer_id: 1

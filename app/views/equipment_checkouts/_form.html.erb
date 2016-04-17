@@ -1,0 +1,15 @@
+<%= simple_form_for(@equipment_checkout) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="col-xs-3">
+    <%= f.input :checkout_date %>
+    <%= f.association :employee, :include_blank => true, :label_method => :employee_name%>
+    <%= f.association :equipment, :include_blank => true, :label_method => :equipment_name%>
+
+
+
+    <%= f.button :submit %>
+      </div>
+  </div>
+<% end %>
