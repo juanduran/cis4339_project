@@ -42,10 +42,13 @@
   <%= @customer.zip %>
 </p>
 
+        <% if @customer.business.business_name.nil? %>
+            <% else %>
 <p>
   <strong>Business:</strong>
   <%= @customer.business.business_name %>
 </p>
+            <% end %>
       </div>
       <div class="panel-footer">
         <div class="btn-group>">
