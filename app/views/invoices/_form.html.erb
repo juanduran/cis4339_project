@@ -11,7 +11,7 @@
 
       <%= f.simple_fields_for :line_items do |line_item|%>
           <%= render 'line_item_fields', :f => line_item%>
-
+      <% end %>
           <div id='links'>
             <br>
             <%= link_to_add_association 'add item', f, :line_items%>
@@ -19,7 +19,7 @@
 
     <%= f.button :submit %>
 
-      <% end %>
+
   </div>
     </div>
 <% end %>

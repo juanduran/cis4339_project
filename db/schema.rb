@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415213034) do
+ActiveRecord::Schema.define(version: 20160417193027) do
 
   create_table "businesses", force: :cascade do |t|
     t.string   "business_name"
@@ -93,10 +93,10 @@ ActiveRecord::Schema.define(version: 20160415213034) do
     t.decimal  "invoice_total"
     t.string   "terms"
     t.integer  "project_id"
-    t.integer  "job_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "crew_id"
+    t.integer  "invoice_id"
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -109,9 +109,9 @@ ActiveRecord::Schema.define(version: 20160415213034) do
   create_table "line_items", force: :cascade do |t|
     t.integer  "quantity"
     t.integer  "service_id"
-    t.integer  "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "invoice_id"
   end
 
   create_table "projects", force: :cascade do |t|
