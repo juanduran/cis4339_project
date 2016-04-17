@@ -5,12 +5,21 @@
     <div class="col-xs-3">
     <%= f.association :customer, :include_blank => true, :label_method => :customer_name%>
     <%= f.input :date %>
-    <%= f.input :invoice_total %>
     <%= f.input :terms %>
     <%= f.association :project, :include_blank => true, :label_method => :project_name%>
     <%= f.association :crew, :include_blank => true, :label_method => :crew_name%>
 
+      <%= f.simple_fields_for :line_items do |line_item|%>
+          <%= render 'line_item_fields', :f => line_item%>
+
+          <div id='links'>
+            <br>
+            <%= link_to_add_association 'add item', f, :line_items%>
+          </div>
+
     <%= f.button :submit %>
+
+      <% end %>
   </div>
     </div>
 <% end %>
