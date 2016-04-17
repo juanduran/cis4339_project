@@ -16,7 +16,7 @@ class EstimatesController < ApplicationController
       respond_to do |format|
         format.html
         format.pdf do
-          pdf = EstimatePdf.new(@estimate)
+          pdf = EstimatePdf.new(@estimate, view_context)
           send_data pdf.render, filename: "estimate_#{@estimate.id}.pdf",
               type: "application/pdf",
               disposition: "inline"
