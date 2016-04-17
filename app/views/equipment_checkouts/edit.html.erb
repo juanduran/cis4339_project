@@ -1,7 +1,25 @@
-<h1>Editing Equipment Checkout</h1>
+
+<div class="container">
+
+  <!-- Page Heading/Breadcrumbs -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Equipment Checkout
+
+      </h1>
+      <ol class="breadcrumb">
+        <%= link_to "Equipment", equipment_checkout_path %>
+        </li>
+        <li class="active"> \ Equipment Checkout</li>
+      </ol>
+    </div>
+  </div>
+
 <div class="row">
 <%= render 'editform' %>
   </div>
 
 <%= link_to 'Show', @equipment_checkout %> |
 <%= link_to 'Back', equipment_checkouts_path %>
+
+  </div>

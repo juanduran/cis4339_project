@@ -31,7 +31,7 @@
       <tr>
         <td><%= vehicle.vehicle_name %></td>
         <td><%= vehicle.vechile_location %></td>
-        <td><%= link_to 'Show', vehicle,class: "btn btn-primary"  %></td>
+        <td><%= link_to 'Show', vehicle,class: "btn btn-success"  %></td>
         <td><%= link_to 'Edit', edit_vehicle_path(vehicle),class: "btn btn-warning" %></td>
         <td><%= link_to 'Destroy', vehicle,class: "btn btn-danger",  method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -42,7 +42,7 @@
 
 <br>
    <div class="panel-footer">
-        <%= link_to 'New Vehicle', new_vehicle_path, class: "btn btn-info" %>
+        <%= link_to 'New Vehicle', new_vehicle_path, class: "btn btn-success" %>
          <%= link_to 'Reserve A Vehicle', vehicle_checkouts_path, class: "btn btn-info" %>
       </div>
 
