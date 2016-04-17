@@ -25,7 +25,8 @@
      <tr>
       <th>Name</th>
       <th>Phone</th>
-      <th colspan="2"></th>
+       <th>Crew</th>
+      <th colspan="3"></th>
     </tr>
         </thead>
         <tbody>
@@ -33,6 +34,11 @@
       <tr>
         <td><%= employee.employee_name %></td>
         <td><%= employee.employee_phone %></td>
+        <% if employee.crew.present? %>
+        <td><%= employee.crew.crew_name %></td>
+        <% else %>
+         <td></td>
+        <% end %>
         <td><%= link_to 'Show', employee,class: "btn btn-primary"%></td>
         <td><%= link_to 'Edit', edit_employee_path(employee),class: "btn btn-warning" %></td>
         <td><%= link_to 'Destroy', employee,class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>

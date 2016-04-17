@@ -11,27 +11,21 @@
     </div>
   <% end %>
 
-    <div class="field">
-      <div class="field">
+    <div class="form-inputs">
+      <div class="col-xs-3">
+
         <%= f.association :employee, :include_blank => true, :label_method => :employee_name%>
-      </div>
 
-    </div>
 
-  <div class="field">
+
     <%= f.association :role, :include_blank => true, :label_method => :name%>
-  </div>
 
-    <div class="field">
       <%= f.input :email %>
-    </div>
 
 
-    <div class="field">
       <%= f.input :password, placeholder: "Leave blank if unchanged" %>
-    </div>
 
-    <div class="form-actions">
       <%= f.button :submit %>
+        </div>
     </div>
 <% end %>

@@ -43,6 +43,11 @@
         <td><%= customer.city %></td>
         <td><%= customer.state %></td>
         <td><%= customer.zip %></td>
+        <% if customer.business.present? %>
+        <td><%= customer.business.business_name if customer.business%></td>
+        <% else %>
+        <td></td>
+        <% end %>
         
         <td><%= link_to 'Show', customer,class: "btn btn-primary" %></td>
         <td><%= link_to 'Edit', edit_customer_path(customer),class: "btn btn-warning" %></td>
