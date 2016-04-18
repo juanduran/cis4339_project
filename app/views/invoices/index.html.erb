@@ -25,7 +25,7 @@
        <%= f.date_select :date_gteq %>
        <%= f.label :date_teq, "AND" %>
        <%= f.date_select :date_lteq %>
-        <div class = "action"><%=f.submit "Search",class: "btn btn-info" %>
+        <div class = "action"><%=f.submit "Search",class: "btn btn-success" %>
        </div>
        </div>
         <% end %>
@@ -63,7 +63,7 @@
         <% else %>
         <td></td>
         <% end %>
-        <td><%= link_to 'Show',invoice,class: "btn btn-primary" %></td>
+        <td><%= link_to 'Show',invoice,class: "btn btn-success" %></td>
         <td><%= link_to 'Edit', edit_invoice_path(invoice),class: "btn btn-warning" %></td>
         <td><%= link_to 'Destroy', invoice,class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -74,7 +74,7 @@
 
 <br>
    <div class="panel-footer">
-        <%= link_to 'New Invoice', new_invoice_path, class: "btn btn-info" %>
+        <%= link_to 'New Invoice', new_invoice_path, class: "btn btn-success" %>
       </div>
 
     </div>
