@@ -4,6 +4,8 @@ class CreateInvoices < ActiveRecord::Migration
       t.integer :customer_id
       t.date :date
       t.decimal :invoice_total
+      t.string :company
+      t.string :contragent
       t.string :terms
       t.integer :project_id
       t.integer :job_id

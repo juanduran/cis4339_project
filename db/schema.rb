@@ -92,12 +92,13 @@ ActiveRecord::Schema.define(version: 20160418163131) do
     t.integer  "customer_id"
     t.date     "date"
     t.decimal  "invoice_total"
+    t.string   "company"
+    t.string   "contragent"
     t.string   "terms"
     t.integer  "project_id"
+    t.integer  "job_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.integer  "crew_id"
-    t.integer  "invoice_id"
   end
 
   create_table "jobs", force: :cascade do |t|
