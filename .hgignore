@@ -12,7 +12,8 @@ tmp/*
 .orig
 
 # JetBrains files to ignore
-**/.idea/workspace.xml
+/.idea/workspace.xml
+/.idea/*
 
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
 
