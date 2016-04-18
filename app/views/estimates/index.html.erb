@@ -32,6 +32,10 @@
         </thead>
         <tbody>
         <% @estimates.each do |estimate| %>
+
+        <% if user_signed_in? %>
+        <% if current_user.role.name == 'Customer' %>
+        <% if estimate.customer_id == current_user.customer.id %>
       <tr>
         <td><%= estimate.potential_customer %></td>
         <td><%= estimate.terms %></td>
@@ -50,7 +54,31 @@
         <td><%= link_to 'Destroy', estimate, class: "btn btn-danger",method: :delete, data: { confirm: 'Are you sure?' } %></td>
             <% end %>
       </tr>
-    <% end %>
+
+
+                    <%end%>
+                <%else%>
+                    <tr>
+                      <td><%= estimate.potential_customer %></td>
+                      <td><%= estimate.terms %></td>
+                      <td><%= estimate.description %></td>
+                      <td><%= estimate.total %></td>
+                      <% if estimate.customer.present? %>
+                          <td><%= estimate.customer.customer_name %></td>
+                      <% else %>
+                          <td></td>
+                      <% end %>
+                      <td><%= link_to 'Show', estimate, class: "btn btn-success" %></td>
+                      <% if can? :edit, Estimate %>
+                          <td><%= link_to 'Edit', edit_estimate_path(estimate),class: "btn btn-warning" %></td>
+                      <% end %>
+                      <% if can? :destroy, Estimate %>
+                          <td><%= link_to 'Destroy', estimate, class: "btn btn-danger",method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                      <% end %>
+                    </tr>
+                  <%end%>
+        <% end %>
+                <% end %>
         </tbody>
       </table>
     </div>
