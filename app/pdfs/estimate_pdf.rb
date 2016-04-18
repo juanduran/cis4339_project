@@ -10,6 +10,7 @@ class EstimatePdf < Prawn::Document
   end
 
   def estimate_number
+    image "app/assets/images/client_logo.jpg", position: :left, :height => 50, :vposition => -60
     text "Estimate \##{@estimate.id}", size: 30, style: :bold
   end
 
@@ -19,7 +20,7 @@ class EstimatePdf < Prawn::Document
     table line_item_rows do
       row(0).font_style = :bold
       columns(1..3).align = :right
-      self.row_colors = ["DDDDDD", "FFFFFF"]
+      self.row_colors = ["BCFFA6", "D3D3D3"]
       self.header = true
     end
   end
@@ -38,7 +39,7 @@ class EstimatePdf < Prawn::Document
 
   def total_price
     move_down(20)
-    text "Total Price #{@estimate.total}"
+    text "Total Price #{@estimate.total}", size: 16, style: :bold
   end
 
 
