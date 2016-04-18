@@ -24,7 +24,6 @@
           <th>Service</th>
           <th>Description</th>
           <th>Price</th>
-          <th>Employee</th>
           <th colspan="3">Options</th>
         </tr>
         </thead>
@@ -34,9 +33,11 @@
               <td><%= service.name %></td>
               <td><%= service.description %></td>
               <td><%= service.price %></td>
+              <% if can? :edit, Estimate %>
               <td><%= link_to 'Show', service,class: "btn btn-success" %></td>
               <td><%= link_to 'Edit', edit_service_path(service),class: "btn btn-warning" %></td>
               <td><%= link_to 'Destroy', service,class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <% end %>
             </tr>
         <% end %>
         </tbody>
