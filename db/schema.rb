@@ -99,13 +99,7 @@ ActiveRecord::Schema.define(version: 20160418163131) do
     t.integer  "job_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-  end
-
-  create_table "jobs", force: :cascade do |t|
     t.integer  "crew_id"
-    t.integer  "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "line_items", force: :cascade do |t|
