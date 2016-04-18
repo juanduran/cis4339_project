@@ -26,6 +26,7 @@
       <th>Name</th>
       <th>Phone</th>
        <th>Crew</th>
+       <th>Account</th>
       <th colspan="3"></th>
     </tr>
         </thead>
@@ -38,6 +39,11 @@
         <td><%= employee.crew.crew_name %></td>
         <% else %>
          <td></td>
+        <% end %>
+        <% if employee.user.present? %>
+            <td><%= employee.user.email %></td>
+        <% else %>
+            <td></td>
         <% end %>
         <td><%= link_to 'Show', employee,class: "btn btn-success"%></td>
         <td><%= link_to 'Edit', edit_employee_path(employee),class: "btn btn-warning" %></td>

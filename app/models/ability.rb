@@ -57,6 +57,8 @@ class Ability
 
     elsif user.customer?
       can :read, Service
+      can :read, Invoice
+      can :read, Estimate
 
 
     end

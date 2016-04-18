@@ -48,6 +48,14 @@
   <%= @customer.business.business_name %>
 </p>
             <% end %>
+
+        <% if @customer.user.present? %>
+            <p>
+              <strong>Customer:</strong>
+              <%= @customer.user.email %>
+            </p>
+
+        <% end %>
       </div>
       <div class="panel-footer">
         <div class="btn-group>">

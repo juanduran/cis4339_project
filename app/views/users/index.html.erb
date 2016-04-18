@@ -21,7 +21,6 @@
       <thead>
       <tr>
       <tr class = "success">
-        <th>Name</th>
         <th>Role</th>
         <th>Email</th>
         <th colspan="4">Options</th>
@@ -34,11 +33,6 @@
       <tbody>
       <% @users.each do |user| %>
           <tr>
-            <% if user.employee.present? %>
-            <td><%= user.employee.employee_name %></td>
-            <% else %>
-            <td></td>
-      <% end %>
             <% if user.role.present? %>
             <td><%= user.role.name %></td>
       <% else %>

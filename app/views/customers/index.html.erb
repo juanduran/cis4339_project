@@ -29,6 +29,7 @@
       <th>State</th>
       <th>Zip</th>
       <th>Business</th>
+      <th>Account</th>
       <th colspan="3"></th>
     </tr>
   </tr>
@@ -47,6 +48,11 @@
         <td><%= customer.business.business_name if customer.business%></td>
         <% else %>
         <td></td>
+        <% end %>
+        <% if customer.user.present? %>
+            <td><%= customer.user.email %></td>
+        <% else %>
+            <td></td>
         <% end %>
         
         <td><%= link_to 'Show', customer,class: "btn btn-success" %></td>
