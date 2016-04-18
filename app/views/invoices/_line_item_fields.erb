@@ -1,0 +1,6 @@
+<div class='nested-fields'>
+  <H4>--------------------------------------------------</H4>
+  <body %><%= f.association :service, label_method: :name, :input_html => {id: 'menus',:style=> 'width: 300px'} %></body>
+  <body %><%= f.input :quantity, collection: 1..99, :input_html => {:style=> 'width: 300px'} %>
+  <%= link_to_remove_association "remove", f %></body>
+</div>

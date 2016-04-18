@@ -1,0 +1,23 @@
+<div class="container">
+
+  <!-- Page Heading/Breadcrumbs -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Editing Invoice
+      </h1>
+      <ol class="breadcrumb">
+        <%= link_to "Invoice", invoice_path %>
+        </li>
+        <li class="active"> \ Edit Invoice</li>
+      </ol>
+    </div>
+  </div>
+
+
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @invoice %> |
+<%= link_to 'Back', invoices_path %>
+
+  </div>

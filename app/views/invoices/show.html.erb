@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class ="panel-heading">
+        <h3 class="panel-title">Invoices</h3>
+      </div>
+      <div class = "panel-body">
+        <p>
+  <strong>Customer:</strong>
+          <% if @invoice.customer.present? %>
+  <%= @invoice.customer.customer_name %>
+</p>
+
+              <% end %>
+
+<p>
+  <strong>Date:</strong>
+  <%= @invoice.date %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <% @invoice.totalprice %>
+  <%= @invoice.totalprice2 %>
+</p>
+
+<p>
+  <strong>Terms:</strong>
+  <%= @invoice.terms %>
+</p>
+
+          <% if @invoice.project.present? %>
+<p>
+  <strong>Project:</strong>
+  <%= @invoice.project.project_name%>
+</p>
+         <% end %>
+
+  <% if @invoice.crew.present? %>
+ <p>
+ <strong>Crew:</strong>
+ <%= @invoice.crew.crew_name%>
+ </p>
+ <% end %>
+
+          <div class="panel-footer">
+            <div class="btn-group>">
+
+              <%= link_to "Printable Receipt (PDF)", invoice_path(@invoice, format: "pdf"), class: "btn btn-danger"  %>
+              <% if can? :edit, Invoice %>
+                  <%= link_to 'Edit', edit_invoice_path(@invoice), class: "btn btn-danger"  %>
+              <% end %>
+              <%= link_to 'Back', invoices_path, class: "btn btn-warning "%>
+              </div>
+            </div>
+      </div>
+
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>
+
+

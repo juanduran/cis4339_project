@@ -1,0 +1,15 @@
+<%= simple_form_for(@equipment_checkout) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <div class="col-xs-3">
+        <%= f.input :return_date, :disabled => true %>
+        <%= f.input :return_date, :as => :hidden, input_html: {value: Date.today} %>
+
+
+
+
+      <%= f.button :submit, :label => "Return Equipment" %>
+        </div>
+    </div>
+<% end %>
