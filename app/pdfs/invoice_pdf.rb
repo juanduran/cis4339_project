@@ -49,6 +49,7 @@ class InvoicePdf < Prawn::Document
     end
     move_down 10
     text "Crew Assigned: #{@invoice.crew.crew_name}"
+    text "Project: #{@invoice.project.project_name}"
   end
 
 
