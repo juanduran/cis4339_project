@@ -6,6 +6,7 @@ class EstimatePdf < Prawn::Document
     @view = view
     estimate_number
     line_items
+    total_price
   end
 
   def estimate_number
