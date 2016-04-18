@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160417200112) do
+ActiveRecord::Schema.define(version: 20160418154842) do
 
   create_table "businesses", force: :cascade do |t|
     t.string   "business_name"
@@ -80,7 +80,6 @@ ActiveRecord::Schema.define(version: 20160417200112) do
     t.boolean  "potential_customer"
     t.string   "terms"
     t.string   "description"
-    t.integer  "quantity"
     t.decimal  "total"
     t.integer  "customer_id"
     t.datetime "created_at",         null: false
