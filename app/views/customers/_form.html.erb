@@ -10,7 +10,9 @@
     <%= f.input :city %>
     <%= f.input :state %>
     <%= f.input :zip %>
+
     <%= f.association :business, :include_blank => true, :label_method => :business_name%>
+      <%= f.association :user, :include_blank => true, :label_method => :email%>
 
 
     <%= f.button :submit %>

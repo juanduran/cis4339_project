@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :users, allow_destroy: true, reject_if: :all_blank
   before_save :assign_role
 
-  belongs_to :employee
+  has_one :employee
+  has_one :customer
 
   def assign_role
     self.role = Role.find_by name: "Regular" if self.role.nil?
