@@ -24,13 +24,9 @@
 </p>
 
 <p>
-  <strong>Quantity:</strong>
-  <%= @estimate.quantity %>
-</p>
-
-<p>
   <strong>Total:</strong>
-  <%= @estimate.total %>
+  <% @estimate.totalprice %>
+  <%= @estimate.totalprice2 %>
 </p>
 
         <% if @estimate.customer.present? %>
