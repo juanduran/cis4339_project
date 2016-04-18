@@ -21,10 +21,10 @@ class InvoicesController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        pdf = InvoicePdf.new(@invoice, view_context)
-        send_data pdf.render, filename: "Invoice_#{@invoice.id}.pdf",
-                  type: "application/pdf",
-                  disposition: "inline"
+      pdf = InvoicePdf.new(@invoice, view_context)
+      send_data pdf.render "invoice_#{@invoice.invoice_id}.pdf",
+                            type: "application/pdf",
+                            disposition: "inline"
       end
     end
   end
