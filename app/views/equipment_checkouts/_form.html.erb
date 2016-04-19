@@ -3,14 +3,13 @@
 
   <div class="form-inputs">
     <div class="col-xs-3">
-  <div class="col-xs-8"><%= f.input_field :checkout_date, class: "form-control datepicker", as: :string, id: "invoice_date" %></div>
           </div>
-    <%= f.association :employee, :include_blank => true, :label_method => :employee_name%>
+   <div class="col-xs-3"><%= f.association :employee, :include_blank => true, :label_method => :employee_name%>
     <%= f.association :equipment, :include_blank => true, :label_method => :equipment_name%>
-
-
-
-    <%= f.button :submit %>
+     <%= f.label :date, required: false %>
+    <%= f.input_field :checkout_date, class: "form-control datepicker", as: :string, id: "invoice_date" %>
+    <br>
+    <%= f.button :submit, class: "btn btn-success btn-sm" %></div>
       </div>
   </div>
 <% end %>
