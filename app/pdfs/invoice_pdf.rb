@@ -14,6 +14,7 @@ class InvoicePdf < Prawn::Document
 
 
   def invoice_number
+
     image "app/assets/images/client_logo.jpg", position: :left, :height => 50, :vposition => -60
 
     text "Invoice \##{@invoice.id}", size: 20, style: :bold
