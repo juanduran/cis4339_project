@@ -9,8 +9,6 @@ class Ability
       can :manage, :all
     elsif user.employee?
       can :read, Service
-      can :create, Service
-      can :update, Service
 
       can :read, Business
       can :create, Business
@@ -33,20 +31,12 @@ class Ability
       can :update, Estimate
 
       can :read, Invoice
-      can :create, Invoice
-      can :update, Invoice
-
-      can :read, Job
-      can :create, Job
-      can :update, Job
 
       can :read, LineItem
       can :create, LineItem
       can :update, LineItem
 
       can :read, Project
-      can :create, Project
-      can :update, Project
 
       can :read, Vehicle
 

@@ -41,10 +41,18 @@
     </div>
 
 <br>
+<% if can? :create, Vehicle %>
    <div class="panel-footer">
         <%= link_to 'New Vehicle', new_vehicle_path, class: "btn btn-success" %>
          <%= link_to 'Reserve A Vehicle', vehicle_checkouts_path, class: "btn btn-info" %>
       </div>
+  
+  
+  <% else %>
+   <div class="panel-footer">
+         <%= link_to 'Reserve A Vehicle', vehicle_checkouts_path, class: "btn btn-info" %>
+      </div>
+  <% end %>    
 
        
       </div>

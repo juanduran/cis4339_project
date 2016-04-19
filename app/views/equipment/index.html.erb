@@ -32,8 +32,12 @@
         <td><%= equipment.equipment_name %></td>
         <td><%= equipment.equipment_location %></td>
         <td><%= link_to 'Show', equipment,class: "btn btn-success"%></td>
+        <% if can? :edit, Equipment %>
         <td><%= link_to 'Edit', edit_equipment_path(equipment),class: "btn btn-warning" %></td>
+        <% end %>
+        <% if can? :destroy, Equipment %>
         <td><%= link_to 'Destroy', equipment, class: "btn btn-danger",method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
         </tbody>
@@ -41,10 +45,18 @@
     </div>
 
 <br>
+<% if can? :create, Equipment %>
    <div class="panel-footer">
         <%= link_to 'New Equipment', new_equipment_path, class: "btn btn-success" %>
         <%= link_to 'Reserve Equipment', equipment_checkouts_path, class: "btn btn-info" %>
       </div>
+
+      <% else %>
+   <div class="panel-footer">
+        
+        <%= link_to 'Reserve Equipment', equipment_checkouts_path, class: "btn btn-info" %>
+      </div>
+ <% end %>     
 
     </div>
     </div>
