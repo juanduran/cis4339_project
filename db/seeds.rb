@@ -44,7 +44,7 @@ eq1 = Equipment.create({equipment_name: "Axe", equipment_location:"main"})
 eq2 = Equipment.create({equipment_name: "Chainsaw", equipment_location:"main"})
 eq3 = Equipment.create({equipment_name: "wood chipper", equipment_location:"main"})
 
-p1 = Project.create({project_name:"walmart 3 store contract", desctiption:"contract to maintain trees @ 3 walmart location"})
+p1 = Project.create({project_name:"walmart 3 store contract", description:"contract to maintain trees @ 3 walmart location"})
 
 s1 = Service.create({name:"Tree chopping", description:"Chopping trees", price:"150.00"})
 s2 = Service.create({name:"Tree trimming", description:"Trim trees", price:"75.00"})
