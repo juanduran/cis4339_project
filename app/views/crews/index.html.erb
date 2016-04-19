@@ -30,8 +30,12 @@
            <tr>
         <td><%= crew.crew_name %></td>
         <td><%= link_to 'Show', crew,class: "btn btn-success" %></td>
+        <% if can? :edit, Crew %>
         <td><%= link_to 'Edit', edit_crew_path(crew),class: "btn btn-warning" %></td>
+        <% end %>
+        <% if can? :delete, Crew %>
         <td><%= link_to 'Destroy', crew, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
         </tbody>
@@ -39,10 +43,11 @@
     </div>
 
 <br>
+<% if can? :create, Crew %>
    <div class="panel-footer">
         <%= link_to 'New Crew', new_crew_path, class: "btn btn-success" %>
       </div>
-
+ <% end %>     
     </div>
     </div>
 

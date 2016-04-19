@@ -42,9 +42,14 @@
         <td><%= business.city %></td>
         <td><%= business.state %></td>
         <td><%= business.zip %></td>
+
         <td><%= link_to 'Show', business,class: "btn btn-success" %></td>
+        <% if can? :edit, Business %>
         <td><%= link_to 'Edit', edit_business_path(business),class: "btn btn-warning" %></td>
+        <% end %>
+        <% if can? :destroy, Business %>
         <td><%= link_to 'Destroy', business,class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
         </tbody>
@@ -52,9 +57,11 @@
     </div>
 
 <br>
+<% if can? :create, Business %>
    <div class="panel-footer">
         <%= link_to 'New Business', new_business_path, class: "btn btn-success" %>
       </div>
+  <% end %>
 
     </div>
     </div>
