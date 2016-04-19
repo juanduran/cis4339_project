@@ -14,10 +14,11 @@
       <% end %>
       <div id='links'>
         <br>
-        <%= link_to_add_association 'add item', f, :estimate_line_items%>
+        <%= link_to_add_association 'add item', f, :estimate_line_items, class: "btn btn-success"%>
       </div>
+      <br>
 
-      <%= f.button :submit %>
+      <%= f.button :submit, class: "btn btn-success" %>
 
   </div>
     </div>
